@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from robots import views as rob_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('create-robot/', rob_views.robot_create, name='create_robot'),  # для отправки POST запроса для добавления в бд
+                                                                        # созданного робота
 ]
